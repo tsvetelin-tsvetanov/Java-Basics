@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class _04_OfficeStuff {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		scan.nextLine();
+		
+		TreeMap<String, TreeMap<String, Integer>> stuff = new TreeMap<>();
+		for(int i = 0; i < n; i++){
+			String input = scan.nextLine();
+			String[] array = input.split("[| - - |]");
+			System.out.println(array[0]);
+			System.out.println(array[1]);
+			System.out.println(array[2]);
+		}
+	}
+}

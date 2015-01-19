@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class _02_PossibleTriangles {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		while(true){
+			String input = scan.nextLine();
+			if(input.equals("End")){
+				break;
+			}
+			String[] array = input.split(" ");
+			double a = 0;
+			double b = 0;
+			double c = 0;
+			
+			double aTemp = Double.parseDouble(array[0]);
+			double bTemp = Double.parseDouble(array[1]);
+			double cTemp = Double.parseDouble(array[2]);
+			
+
+			if(cTemp < aTemp){
+				c = aTemp;
+				a = cTemp;
+				if(cTemp< bTemp){
+					c = bTemp;
+					b = aTemp;
+				} else {
+					b = aTemp;
+					a = cTemp;
+					c = aTemp;
+					} 
+			}
+			else if(bTemp > cTemp){
+				c = bTemp;
+				b = cTemp;
+				a = aTemp;
+			} else {
+				a = aTemp;
+				b = bTemp;
+				c = cTemp;
+			}
+			
+			if(a + b > c){
+				System.out.printf("%.2f+%.2f=%.2f\n", a, b, c);
+			}
+		}
+		
+	}
+}
