@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class _1_VideoDurations {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int totalMinutes = 0;
+		
+		String input = scan.nextLine();
+		String[] time = null;
+		while(true){
+			if(input.equals("End")){
+				break;
+			}
+			
+			int hour = 0;
+			int minute = 0;
+			time = input.split(":");
+			hour += Integer.parseInt(time[0]);
+			minute += Integer.parseInt(time[1]);
+			totalMinutes = totalMinutes + hour * 60 + minute;
+		}
+		int totalHours = totalMinutes / 60;
+		totalMinutes = totalMinutes % 60;
+		System.out.printf("%d:%02d\n", totalHours, totalMinutes);
+	}
+
+}

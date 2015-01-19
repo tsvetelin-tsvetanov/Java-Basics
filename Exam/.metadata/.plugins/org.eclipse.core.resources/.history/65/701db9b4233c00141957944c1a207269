@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class _9_LongestOddEvenSequence {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] numbers = input.split("[ ()]+");
+		int n = Integer.parseInt(numbers[0]); 
+		int[] nums = new int[numbers.length-1];
+		for(int i = 0; i < nums.length; i++){
+			nums[i] = Integer.parseInt(numbers[i]);
+		}
+		
+		int sequence = 0;
+		int biggestSequence = 0;
+		boolean oddCheck = (nums[0] % 2 != 0);
+		for(int num : nums){
+			boolean odd = num % 2 != 0;
+			if(odd == oddCheck || num == 0 ){
+				sequence++;		
+			} else{
+				oddCheck = odd;
+				sequence = 1;
+			}
+			if(sequence > biggestSequence){
+				biggestSequence = sequence;
+			}
+		}
+		System.out.println(biggestSequenc);
+	}
+
+}

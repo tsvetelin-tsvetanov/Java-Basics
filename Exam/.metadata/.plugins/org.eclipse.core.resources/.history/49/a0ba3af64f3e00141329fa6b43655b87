@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class _15_LogsAggregator {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		
+		TreeMap<String, Integer> durations = new TreeMap<>();
+		HashMap<String, TreeSet<String> > ipAddress = new HashMap<>();
+		for(int i = 0; i < n; i++){
+			String input = scan.nextLine();
+			String[] logs = input.split(" ");
+			String ip = logs[0];
+			String user = logs[1];
+			int duration = Integer.parseInt(logs[2]);
+			
+			Integer oldDuration = durations.get(user);
+			if(oldDuration == null){
+				oldDuration = 0;
+			}
+			durations.put(user, duration + oldDuration);
+			
+			TreeSet<String> ipSet = ipAddress.get(user);
+			if(ipSet == null){
+				ipSet = new TreeSet<>();
+			}
+			ipSet.add(ip);
+			ipAddress.put(user, ipSet);
+		}
+		for (Entry <String, Integer> userAndDuration : durations.entrySet()) {
+			String user = userAndDuration.getKey();
+			int duration = userAndDuration.getValue();
+			TreeSet<String> ipSet = ipAddress.get(user);
+			System.out.println(user + ": " + duration + "" + ipSet );
+		}
+	}
+}

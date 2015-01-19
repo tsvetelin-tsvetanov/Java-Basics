@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class _999_ExamPrep4 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] cards = input.split("[, ]+");
+
+		Arrays.sort(cards);
+		System.out.println(Arrays.toString(cards));
+		int count = 0;
+		
+		if(count == 0){
+			System.out.println("No Straigth Flushes");
+		}
+	}
+}

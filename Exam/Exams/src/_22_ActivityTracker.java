@@ -1,0 +1,54 @@
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+import java.util.Iterator;
+
+public class _22_ActivityTracker {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = Integer.parseInt(scan.nextLine());
+		
+		TreeMap<Integer, TreeMap<String, Integer>> months = new TreeMap();
+		
+		for(int i = 0; i < n; i++){
+			String[] array = scan.nextLine().split(" ");
+			String[] date = array[0].split("/");
+			
+			int month = Integer.parseInt(date[1]);
+			String user = array[1];
+			int distance = Integer.parseInt(array[2]);
+			
+			if(!months.containsKey(month)){
+				TreeMap<String, Integer> users = new TreeMap<>();
+				users.put(user, distance);
+				months.put(month, users);
+			} else {
+				TreeMap<String, Integer> users = months.get(month);
+				if(!users.containsKey(user)){
+					users.put(user, distance);
+				} else {
+					int tempDist = users.get(user);
+					tempDist = tempDist + distance;
+					users.put(user, tempDist);
+				}
+			}
+		}
+		
+		for(Iterator it = months.entrySet().iterator(); it.hasNext();){
+			Map.Entry month = (Map.Entry) it.next();
+			
+			
+			String print = month.getKey() + ": ";
+			
+			TreeMap users = (TreeMap) month.getValue();
+			for(Iterator it2 = users.entrySet().iterator(); it2.hasNext();){
+				Map.Entry user = (Map.Entry) it2.next();
+				
+				print += user.getKey() + "(" + user.getValue() + "), "; 
+			}
+			print = print.substring(0, print.length() - 2);
+			System.out.println(print);
+		}
+	}
+}

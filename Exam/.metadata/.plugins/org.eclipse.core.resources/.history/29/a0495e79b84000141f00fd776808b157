@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class _1_VideoDurations {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int hours = 0;
+		int minutes = 0
+		
+		while(true){
+			String input = scan.nextLine();
+			if(input.equals("End")){
+				break;
+			}
+			String[]array = input.split(":");
+			hours = hours + Integer.parseInt(array[0]);
+			minutes = minutes + Integer.parseInt(array[1]);
+		}
+		
+		while(minutes > 59){
+			minutes = minutes - 59;
+			hours++;
+		}
+		System.out.println(hours + ":" + minutes);
+	}
+
+}

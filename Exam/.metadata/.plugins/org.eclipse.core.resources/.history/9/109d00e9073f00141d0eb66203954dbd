@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class _999_ExamPrep4 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		input = input.replaceAll("J", "11");
+		input = input.replaceAll("Q", "12");
+		input = input.replaceAll("K", "13");
+		input = input.replaceAll("A", "14");
+		
+		String[] cards = input.split("[, ]+");
+		
+		String[] cardsValue = new String[cards.length];
+		String[] cardsFaces = new String[cards.length];
+		
+		int index = 0;
+		for (String string : cards) {
+			
+			String[] value = string.split("[^0-9]");
+			String[] face = string.split("[a-zA-Z]");
+			cardsValue[index] = value[0];
+			cardsFaces[index] = face[0];
+			
+			index++;
+		}
+
+		
+		
+		System.out.println(Arrays.toString(cardsValue));
+		System.out.println(Arrays.toString(cardsFaces));
+		
+	}
+}

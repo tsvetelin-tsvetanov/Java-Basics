@@ -1,0 +1,16 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class _9_LongestOddEvenSequence {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] numbers = input.split("[ ()]+");
+		int[] nums = new int[numbers.length-1];
+		for(int i = 0; i < nums.length; i++){
+			nums[i] = Integer.parseInt(numbers[i]);
+		}
+		
+		System.out.println(nums);
+	}
+
+}

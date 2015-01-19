@@ -1,0 +1,120 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class _999_ExamPrep4 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] cards = input.split(", ");
+		Arrays.sort(cards);
+		int count = 0;
+		for(int a = 0; a < cards.length; a++){
+			for(int b = a + 1; b < cards.length; b++){
+				for(int c = a + 2; c < cards.length; c++){
+					for(int d = c + 1; d < cards.length; d++){
+						for(int e = d + 1; e < cards.length; d++){
+							String[] cardA = cards[a].split("");
+							String[] cardB = cards[b].split("");
+							String[] cardC = cards[c].split("");
+							String[] cardD = cards[d].split("");
+							String[] cardE = cards[e].split("");
+							if(cardA[1].equals(cardB[1]) && 
+									cardA[1].equals(cardC[1]) &&
+									cardA[1].equals(cardD[1]) &&
+									cardA[1].equals(cardE[1]) &&
+									cardB[1].equals(cardC[1]) &&
+									cardB[1].equals(cardD[1]) &&
+									cardB[1].equals(cardE[1]) &&
+									cardC[1].equals(cardD[1]) &&
+									cardC[1].equals(cardE[1]) &&
+									cardD[1].equals(cardE[1])){
+								
+								int first = Integer.parseInt(cardA[0]);
+								int second = Integer.parseInt(cardB[0]);
+								int third = Integer.parseInt(cardC[0]);
+								int fourth = Integer.parseInt(cardD[0]);
+								int fifth = Integer.parseInt(cardE[0]);
+								
+								if(cardA[0].equals("J")){
+									first = 11;
+								}
+								if(cardB[0].equals("J")){
+									second = 11;
+								}
+								if(cardC[0].equals("J")){
+									third = 11;
+								}
+								if(cardD[0].equals("J")){
+									fourth = 11;
+								}
+								if(cardE[0].equals("J")){
+									fifth = 11;
+								}
+								if(cardA[0].equals("Q")){
+									first = 12;
+								}
+								if(cardB[0].equals("Q")){
+									second = 12;
+								}
+								if(cardC[0].equals("Q")){
+									third = 12;
+								}
+								if(cardD[0].equals("Q")){
+									fourth = 12;
+								}
+								if(cardE[0].equals("Q")){
+									fifth = 12;
+								}
+								if(cardA[0].equals("K")){
+									first = 13;
+								}
+								if(cardB[0].equals("K")){
+									second = 13;
+								}
+								if(cardC[0].equals("K")){
+									third = 13;
+								}
+								if(cardD[0].equals("K")){
+									fourth = 13;
+								}
+								if(cardE[0].equals("K")){
+									fifth = 13;
+								}
+								if(cardA[0].equals("A")){
+									first = 14;
+								}
+								if(cardB[0].equals("A")){
+									second = 14;
+								}
+								if(cardC[0].equals("A")){
+									third = 14;
+								}
+								if(cardD[0].equals("A")){
+									fourth = 14;
+								}
+								if(cardE[0].equals("A")){
+									fifth = 14;
+								}
+									
+								
+								
+								if(second == first++ && 
+										third == second++ &&
+										fourth == third++ && 
+										fifth == fourth++){
+									System.out.println(cardA + " " + cardB
+											+ " " + cardC + " " 
+											+ cardD + " " + cardE);
+									count++;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		if(count == 0){
+			System.out.println("No Straigth Flushes");
+		}
+	}
+}

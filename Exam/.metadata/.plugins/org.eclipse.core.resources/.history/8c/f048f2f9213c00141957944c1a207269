@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class _9_LongestOddEvenSequence {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		int n = Integer.parseInt(input);
+		System.out.println(n);
+	}
+
+}

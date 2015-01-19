@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.TreeMap;
+import java.util.*;
+
+public class _21_ExamScore {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		scan.nextLine();
+		scan.nextLine();
+		scan.nextLine();
+		TreeMap<Integer, TreeMap<String, Double>> data = new TreeMap();
+		
+		String name = null;
+		int score = 0;
+		double grade = 0;
+		
+		while(true){
+			
+			String input = scan.nextLine();
+			if(input == "-"){
+				break;
+			}
+			String[] info = input.split(" |");
+			name = info[0];
+			score = Integer.parseInt(info[1]);
+			grade = Double.parseDouble(info[2]);
+			if(!data.containsKey(score)){
+				data.put(score, new TreeMap<>());
+			}
+			
+			data.get(score).put(name, grade);
+		}
+		
+		for (Integer print : data.keySet()) {
+			System.out.print(score + " -> ");
+			System.out.println(data.get(score).keySet());
+			double sum = 0;
+			for(double grades : data.get(score).values()){
+				sum += grade;
+			}
+			double avg = sum / data.get(score).values().size();
+			System.out.printf("; avg=%.2f\n", avg);
+			
+		}
+
+		
+		System.out.println(data.get(score));
+	}
+}

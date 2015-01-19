@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class _19_Orders {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		scan.nextLine();
+		
+		for(int i = 0; i < n; i++){
+			String input = scan.nextLine();
+			String[] info = input.split(" ");
+			String name = info[0];
+			int count = Integer.parseInt(info[1]);
+			String type = info[2];
+			System.out.println(name + count + type);
+ 		}
+		
+
+	}
+}

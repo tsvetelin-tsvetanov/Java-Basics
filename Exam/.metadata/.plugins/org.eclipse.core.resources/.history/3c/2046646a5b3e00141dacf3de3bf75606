@@ -1,0 +1,13 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class _999_ExamPrep1 {
+	public static void main(String[] args) {
+		//cognate words
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] words = input.split("[a-zA-Z+"); 
+		//google search non latin character
+		
+		System.out.println(Arrays.toString(words));
+	}
+}

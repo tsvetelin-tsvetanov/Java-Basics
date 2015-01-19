@@ -1,0 +1,6 @@
+import java.util.Scanner;
+public class _7_PhytagoreanNumbers {
+	public static void main(String[] args) {
+	
+	}
+}

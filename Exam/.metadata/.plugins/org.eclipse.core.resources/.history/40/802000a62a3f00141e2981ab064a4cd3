@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class _20_Durts {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int x = scan.nextInt();
+		int y = scan.nextInt();
+		int r = scan.nextInt();
+		int n = scan.nextInt();
+		scan.nextLine();
+		
+		String shots = scan.nextLine();
+		String[] hits = shots.split(" ");
+
+		
+		for(int i = 1; i < n; i = i + 2){
+			int a = Integer.parseInt(hits[i - 1]);
+			int b = Integer.parseInt(hits[i]);
+
+			if(a <= x + r && a >= x - r){
+				if(a <= y + r && a >= y - r){
+					System.out.println("Yes");
+				} else {
+					System.out.println("No");
+				}
+			} else {
+				System.out.println("No");
+			}
+		}
+	}
+}

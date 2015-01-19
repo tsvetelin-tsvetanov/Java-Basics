@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class _17_LargestThreeRectangles {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		input = input.replace("[", "");
+		input = input.replace(" ", "");
+		String[] rectangles = input.split("]");
+		int index = 0;
+		int[] nums = new int[rectangles.length * 2];
+		
+		for(int i = 0; i < rectangles.length; i++){
+			String[] temp = rectangles[i].split("x");
+
+			nums[index] = Integer.parseInt(temp[0]);
+			index++;
+			nums[index] = Integer.parseInt(temp[1]);
+			index++;
+		}
+		System.out.println(nums[0] + " " + nums[1]);
+		
+	}
+}

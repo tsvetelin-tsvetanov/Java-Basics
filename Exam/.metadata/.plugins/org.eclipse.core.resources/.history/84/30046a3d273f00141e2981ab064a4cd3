@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class _19_Orders {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		scan.nextLine();
+		TreeMap<String, Integer> quantity = new TreeMap<>();
+		HashMap<String, TreeSet<String>> fruit = new HashMap<>();
+		for(int i = 0; i < n; i++){
+			String input = scan.nextLine();
+			String[] info = input.split(" ");
+			String name = info[0];
+			int count = Integer.parseInt(info[1]);
+			String type = info[2];
+			
+			Integer oldQuantity = quantity.get(name);
+			if(oldQuantity == null){
+				oldQuantity = 0;
+			}
+			quantity.put(name, oldQuantity + count);
+			
+			TreeSet<String> order = fruit.get(name);
+			if(order == null){
+				order = new TreeSet<>();
+			}
+			order.add(type);
+			fruit.put(type, order);
+			
+ 		}
+		
+		for (Entry <String, Integer> nameAndOrder : quantity.entrySet()) {
+			
+			String order = nameAndOrder.getKey();
+			int count = nameAndOrder.getValue();
+			TreeSet<String> names = fruit.get(order);
+			System.out.println(order + " " + count + " " + names);
+		}
+		
+
+	}
+}

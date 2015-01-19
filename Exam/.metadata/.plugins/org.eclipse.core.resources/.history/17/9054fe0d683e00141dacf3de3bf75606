@@ -1,0 +1,35 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class _999_ExamPrep1 {
+	public static void main(String[] args) {
+		//cognate words
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[] words = input.split("[^a-zA-Z]+"); 
+		//google search non latin character
+		int count = 0;
+		
+		
+		for(int a = 0; a < words.length; a++){
+			String wordA = words[a];
+			for(int b  = 0; b < words.length; b++){
+				String wordB = words[b];
+				for(int c = 0; c < words.length; c++){
+					String wordC = words[c];
+					
+					String leftSide = wordA + wordB;
+					if(a != b && b != c && a != c){
+						if(leftSide.equals(wordC)){
+							System.out.printf("%s|%s=%s\n", words[a], words[b],
+								words[c]);
+							count++;
+						}
+					}
+				}
+			}
+		}
+		if(count ==  0){
+			System.out.println("No");
+		}
+	}
+}

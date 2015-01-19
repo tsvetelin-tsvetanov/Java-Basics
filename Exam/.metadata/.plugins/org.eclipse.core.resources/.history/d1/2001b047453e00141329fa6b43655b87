@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class _11_AddingAngles {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int sum = 0;
+		int count = 0;
+		int[] nums = new int[n];
+		for(int a = 0; a < n; a++){
+			nums[a] = scan.nextInt();
+		}
+		for(int i = 0; i < nums.length; i++){
+			for(int j = 1; j < nums.length; j++){
+				for(int k = 2; k < nums.length; k++){
+					if(i != j && i != k && j != k){
+						sum = nums[i] + nums[j] + nums[k];
+						System.out.print(sum);
+					}
+
+				}
+			}
+		}
+		if(count == 0){
+			System.out.println("No");
+		}
+		
+	}
+}

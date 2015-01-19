@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class _16_TicTacToePower {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int x = scan.nextInt();
+		int y = scan.nextInt();
+		int n = scan.nextInt();
+		
+		int a = n;
+		int b = n + 1;
+		int c = n + 2;
+		int d = n + 3;
+		int e = n + 4;
+		int f = n + 5;
+		int g = n + 6;
+		int h = n + 7;
+		int i = n + 8;
+		if(x == 0 && y == 0){
+			System.out.println(a);
+		}
+		else if(x == 1 && y == 0){
+			System.out.println(b);
+		}
+		else if(x == 2 && y == 0){
+			System.out.println(c);
+		}
+		else if(x == 0 && y == 1){
+			System.out.println(d);
+		}
+		else if(x == 1 && y == 1){
+			System.out.println(e);
+		}
+		else if(x == 2 && y == 1){
+			System.out.println(f);
+		}
+		else if(x == 0 && y == 2){
+			System.out.println(g);
+		}
+		else if(x == 1 && y == 2){
+			System.out.println(h);
+		}
+		else if(x == 2 && y == 2){
+			System.out.println(i);
+		}
+	}
+}

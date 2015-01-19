@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.util.TreeSet;
+import java.util.Collections;
+
+public class _21_BiggestThreePrimeNumbers {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		String[]array = input.split("[( )]+");
+		TreeSet<Integer> numbers = new TreeSet<>();
+		
+		for(int i = 0; i < array.length; i++){
+			if(!array[i].equals(" ")){
+				int temp = Integer.parseInt(array[i]);
+				numbers.add(temp);
+			}
+		}
+		
+		System.out.println(numbers);
+		
+	}
+}

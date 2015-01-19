@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class _6_CountBeers {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int beersTotal = 0;
+		while(true){
+			String input = scan.nextLine();
+			if(input.equals("End")){
+				break;
+			}
+			int beers = 0;
+			int stacks = 0;
+
+			String[] in = input.split(" ");
+			if(in[1].equals("stacks")){
+				stacks = Integer.parseInt(in[0]);
+			}
+			else if(in[1].equals("beers")){
+				beers = Integer.parseInt(in[0]);
+			}
+			beersTotal = beers + (stacks * 20);
+		}
+		int stack = beersTotal / 20;
+		beersTotal = beersTotal % 20;
+		System.out.println(stack + " stacks + " + beersTotal + " beers");
+		scan.close();
+	}
+}

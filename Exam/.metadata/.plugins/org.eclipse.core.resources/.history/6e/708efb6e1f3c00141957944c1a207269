@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.math.BigDecimal;
+public class _8_ThreeLargestNumbers {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		BigDecimal first = 0;
+		BigDecimal second;
+		BigDecimal third;
+		for(int i = 0; i < num; i++){
+			BigDecimal n = scan.nextBigDecimal();
+			if(n > first){
+				first = n;
+			}
+			else if(n > second){
+				second = n;
+			}
+			else if(n > third){
+				third = n;
+			}
+		}
+		
+		scan.close();
+	}
+}

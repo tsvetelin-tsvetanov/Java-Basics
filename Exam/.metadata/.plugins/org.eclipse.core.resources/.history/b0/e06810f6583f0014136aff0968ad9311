@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.TreeMap;
+public class _21_ExamScore {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String firstempty = scan.nextLine();
+		String secondempty = scan.nextLine();
+		String thirdempty = scan.nextLine();
+		
+		boolean check = true;
+		TreeMap data = new TreeMap();
+		
+		String name = null;
+		String score = null;
+		String grade = null;
+		
+		
+		do{
+			
+			String input = scan.nextLine();
+			if(input == "-"){
+				check = false;
+				break;
+			}
+			String[] info = input.split(" |");
+			name = info[0];
+			score = info[1];
+			grade = info[2];
+			
+			data.put(score, name);
+			
+		} while(true);
+		
+		System.out.println(data.get(score));
+	}
+}

@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import javax.swing.*;
+
+public class _16_TicTacToePower {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int x = scan.nextInt();
+		int y = scan.nextInt();
+		int n = scan.nextInt();
+		
+		int a = n;
+		int b = n + 1;
+		int c = n + 2;
+		int d = n + 3;
+		int e = n + 4;
+		int f = n + 5;
+		int g = n + 6;
+		int h = n + 7;
+		int i = n + 8;
+		
+		int index = 0;
+		if(x == 0 && y == 0){
+			index = 1;
+			System.out.println(Math.pow(a, index));
+		}
+		else if(x == 1 && y == 0){
+			index = 2;
+			System.out.println(Math.pow(b, index));
+		}
+		else if(x == 2 && y == 0){
+			index = 3;
+			System.out.println(Math.pow(c, index));
+		}
+		else if(x == 0 && y == 1){
+			index = 4;
+			System.out.println(Math.pow(d, index));
+		}
+		else if(x == 1 && y == 1){
+			index = 5;
+			System.out.println(Math.pow(e, index));
+		}
+		else if(x == 2 && y == 1){
+			index = 6;
+			System.out.println(Math.pow(f, index));
+		}
+		else if(x == 0 && y == 2){
+			index = 7;
+			System.out.println(Math.pow(g, index));
+		}
+		else if(x == 1 && y == 2){
+			index = 8;
+			System.out.println(Math.pow(h, index));
+		}
+		else if(x == 2 && y == 2){
+			index = 9;
+			System.out.println(Math.pow(i, index));
+		}
+	}
+}
